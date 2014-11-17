@@ -1,0 +1,69 @@
+.page-content{
+	
+	height:100vh;
+	@include outer-container;
+	position: relative;
+	z-index: 0;
+	@include transition;
+
+	.image{
+		background: #ccc;
+		width:80%;
+		height:400px;
+		margin:10px auto;
+		margin-top: 0;
+	}
+}
+.toggle{
+	position: fixed;
+	top:15px;
+	left:20px;
+	z-index: 1;
+	-webkit-font-size: 20px;
+	-moz-font-size: 20px;
+	-ms-font-size: 20px;
+	-o-font-size: 20px;
+	font-size: 20px;
+	color:black;
+	cursor:pointer;
+	@include transition;
+}
+.sidebar{
+	@include position(fixed, 0px 0 0px -180px);
+	z-index: 0;
+	width:130px;
+	padding:20px;
+	background: #333;
+	@include transition;
+	
+
+	li{	
+		-webkit-font-size: 16px;
+		-moz-font-size: 16px;
+		-ms-font-size: 16px;
+		-o-font-size: 16px;
+		font-size: 16px;
+		margin-bottom: 16px;
+		color:white;
+		cursor:pointer;
+		&:hover{
+			color:yellow;
+		}
+	}
+}
+
+#sidebar-toggler{
+	display:none;
+
+	&:checked + .page-wrap{
+		.sidebar{
+			left:0px;
+		}
+		.page-content{
+			padding-left:180px;
+		}
+		.toggle{
+			left:150px;
+		}
+	}
+}
