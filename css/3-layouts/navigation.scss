@@ -7,7 +7,8 @@
 	@include transition;
 
 	.image{
-		background: #ccc;
+		background: url(img/landscape.jpg) center center;
+		background-size: cover;
 		width:80%;
 		height:400px;
 		margin:10px auto;
