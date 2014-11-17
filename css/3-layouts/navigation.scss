@@ -1,19 +1,29 @@
-.page-content{
-	
-	height:100vh;
-	@include outer-container;
+.page-wrap{
 	position: relative;
-	z-index: 0;
+	top:0;
+	left:0;
 	@include transition;
+	
 
 	.image{
 		background: url(img/landscape.jpg) center center;
 		background-size: cover;
-		width:80%;
+		width:100%;
 		height:400px;
 		margin:10px auto;
 		margin-top: 0;
 	}
+}
+
+.page-content{
+	
+	height:100vh;
+	@include outer-container;
+	max-width:80em;
+	position: relative;
+	z-index: 0;
+	@include transition;
+
 }
 .toggle{
 	position: fixed;
@@ -25,7 +35,7 @@
 	-ms-font-size: 20px;
 	-o-font-size: 20px;
 	font-size: 20px;
-	color:black;
+	color:white;
 	cursor:pointer;
 	@include transition;
 }
@@ -33,7 +43,7 @@
 	@include position(fixed, 0px 0 0px -180px);
 	z-index: 0;
 	width:130px;
-	padding:20px;
+	padding:25px;
 	background: #333;
 	@include transition;
 	
@@ -57,12 +67,13 @@
 	display:none;
 
 	&:checked + .page-wrap{
+		padding-left:130px;
+
 		.sidebar{
 			left:0px;
 		}
-		.page-content{
-			padding-left:180px;
-		}
+
+		
 		.toggle{
 			left:150px;
 		}
